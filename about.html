@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bliss Stays</title>
+  <style>
+    /* Reset */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #444;
+      line-height: 1.6;
+      background-color: #f4f0e6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f0e6;
+      width: 100%;
+      min-height: 100%;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Colors */
+    :root {
+      --primary: #4b4b38;
+      --accent: #6b6b50;
+      --light: #f8f5ee;
+    }
+
+    /* Hero with video */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255, 255, 255, 0.4);
+      z-index: 1;
+    }
+
+    .hero-logo {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .hero-logo img {
+      max-width: 300px;
+      width: 90%;
+      height: auto;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+    }
+
+
+    
+
+    .logo-block {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.logo-text {
+  letter-spacing: 0.5px;
+}
+
+.home-message-wrapper {
+  background-color: #f4f0e0; /* Makes the entire width same color */
+  width: 100%;
+}
+
+.home-message {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-message-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 320px;
+}
+
+.home-message-left {
+  flex: 1 1 300px;
+  font-size: 2.0rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--primary);
+}
+
+.home-message-right {
+  flex: 1 1 500px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .home-message-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-message-left {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .home-message-right {
+    font-size: 1rem;
+  }
+}
+
+/* Outer full-width background wrapper */
+.bliss-brands-fullwrap {
+  background-color: #f4f0e6;
+  width: 100%;
+}
+
+/* Section inside wrapper */
+.bliss-brands-showcase {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Content wrapper */
+.brands-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brands-left {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.brands-left h5 {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.brands-left h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.brands-left p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Cards container */
+.brands-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.brand-card {
+  background: #ece8dd;
+  text-align: center;
+  flex: 1 1 250px;
+  max-width: 300px;
+  padding-bottom: 20px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.brand-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.brand-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 15px 15px 5px;
+}
+
+.brand-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0 15px 10px;
+}
+
+.brand-card a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.brand-card a:hover {
+  color: var(--accent);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .brands-right {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .brand-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/* Click-triggered animation keyframes */
+@keyframes clickBounce {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Class that triggers the animation */
+.animate-on-click {
+  animation: clickBounce 0.3s ease;
+}
+
+.brand-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+
+
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <div class="logo-block">
+        <a href="index.html" class="logo-text">Bliss Stays</a>
+      </div>
+      <div class="spacer"></div>
+      <nav class="main-nav">
+        <ul>
+          <li class="has-dropdown">
+            <a href="#">Locations <span>&#9662;</span></a>
+            <ul class="dropdown">
+              <li><a href="property.html">Maida Vale</a></li>
+              <li><a href="property1.html">Paddington</a></li>
+              <li><a href="property2.html">Nine Elms</a></li>
+              <li><a href="property3.html">Kennington</a></li>
+              <li><a href="property4.html">Wimbledon</a></li>
+            </ul>
+          <li class="has-dropdown">
+            <a href="#">Menu <span>&#9662;</span></a>
+            <ul class="dropdown">
+              <li><a href="faq.html">FAQs</a></li>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="book-now">
+        <a href="#book">Book now</a>
+      </div>
+    </div>
+  </header>
+  
+  
+  
+
+  <style>
+    /* Floating, centered panel header (Zedwell-style) */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+  
+      /* Make the bar itself transparent so the panel “floats” */
+      background: transparent;
+      /* Add a little breathing room from the very top */
+      padding: 10px 16px;
+      /* Smooth transitions */
+      transition: padding 0.25s ease;
+    }
+  
+    /* The floating panel */
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+  
+      /* Panel look */
+      background: rgba(248, 245, 238, 0.96); /* #f8f5ee with slight transparency */
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow:
+        0 14px 30px rgba(0,0,0,0.12),
+        0 4px 10px rgba(0,0,0,0.08);
+  
+      /* Layout */
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+  
+      /* Nice glassy feel on capable browsers */
+      backdrop-filter: saturate(140%) blur(6px);
+    }
+  
+    /* Compact the panel slightly on scroll */
+    header.scrolled { padding-top: 6px; padding-bottom: 6px; }
+    header.scrolled .header-inner {
+      background: rgba(248, 245, 238, 0.98);
+      border-radius: 10px;
+      box-shadow:
+        0 10px 24px rgba(0,0,0,0.10),
+        0 3px 8px rgba(0,0,0,0.08);
+    }
+  
+    /* Logo */
+    .logo-block {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+  
+    .spacer { flex-grow: 1; }
+  
+    /* Nav */
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .main-nav a {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--primary);
+      position: relative;
+      padding-bottom: 3px;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+  
+    .main-nav a:hover { color: var(--accent); }
+  
+    .main-nav a:hover::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 100%; height: 2px;
+      background-color: var(--primary);
+    }
+  
+    .main-nav span {
+      font-size: 10px;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+  
+    /* Book button */
+    .book-now { margin-left: 20px; }
+    .book-now a {
+      background-color: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      display: inline-block;
+    }
+    .book-now a:hover {
+      background-color: #363626;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.16);
+    }
+  
+    /* Dropdown (keeps same behavior; just sits above the panel) */
+    .main-nav .has-dropdown { position: relative; }
+    .main-nav .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0;
+      min-width: 160px;
+      list-style: none;
+      margin: 10px 0 0;
+      padding: 6px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 10px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.10), 0 3px 8px rgba(0,0,0,0.06);
+      z-index: 1001;
+    }
+    .main-nav .has-dropdown:hover .dropdown { display: block; }
+    .main-nav .dropdown li a {
+      display: block;
+      padding: 10px 12px;
+      color: var(--primary);
+      font-size: 14px;
+      border-radius: 6px;
+    }
+    .main-nav .dropdown li a:hover {
+      background-color: #f5f2ea;
+    }
+  
+    /* Small screens: keep the floating look, just tighter padding */
+    @media (max-width: 768px) {
+      .header-inner {
+        padding: 12px 16px;
+        gap: 12px;
+      }
+      .main-nav ul { gap: 20px; }
+      .book-now { margin-left: 12px; }
+    }
+  
+    
+      /* Dropdown */
+      .main-nav .has-dropdown {
+        position: relative;
+      }
+    
+      .main-nav .dropdown {
+        display: none;
+        position: absolute;
+        background-color: var(--light);
+        top: 100%;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        min-width: 140px;
+        z-index: 1001;
+      }
+    
+      .main-nav .has-dropdown:hover .dropdown {
+        display: block;
+      }
+    
+      .main-nav .dropdown li a {
+        display: block;
+        padding: 10px 16px;
+        color: var(--primary);
+        font-size: 14px;
+        text-decoration: none;
+      }
+    
+      .main-nav .dropdown li a:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+  
+  <script>
+    // Toggle compact floating style when scrolling
+    document.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 40) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    });
+  </script>
+  
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const dropdown = document.querySelector('.dropdown');
+
+    menuToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.has-dropdown')) {
+        dropdown.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+
+<!-- =============== About Us (centered + 4 review cards) =============== -->
+<section id="about-us" class="about-us-section" aria-labelledby="about-title">
+    <div class="about-us-wrap">
+      <!-- Cover image -->
+      <figure class="about-cover">
+        <img src="family.jpg" alt="Guests enjoying Bliss Stays apartments" />
+      </figure>
+  
+      <h2 id="about-title" class="about-title">About Us</h2>
+  
+      <p class="about-lead">
+        At Bliss Stays, we are dedicated to providing exceptional, short-term accommodations in the heart of
+        London. With a focus on comfort, quality, and convenience, we offer a range of thoughtfully curated
+        properties to suit any traveler, whether on business or leisure.
+      </p>
+  
+      <!-- Stats -->
+      <div class="stats-grid">
+        <article class="about-card stat-card">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+              <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm-8.5 8a8.5 8.5 0 0 1 17 0 1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1Z"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number"><span class="count" data-target="15000">0</span>+</div>
+            <div class="stat-label">Guests hosted</div>
+          </div>
+        </article>
+  
+        <article class="about-card stat-card">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+              <path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 0 1 2 0v1h1a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1Zm13 8H4v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1Z"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number"><span class="count" data-target="8000">0</span>+</div>
+            <div class="stat-label">Nights hosted</div>
+          </div>
+        </article>
+      </div>
+  
+      <!-- Reviews (4 cards) -->
+      <div class="reviews-grid">
+        <article class="about-card review-card">
+          <div class="review-top">
+            <span class="rating-number">4.9</span>
+            <span class="rating-stars" aria-label="4.9 out of 5 stars">
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+            </span>
+          </div>
+          <div class="rating-small">4.9 out of 5</div>
+          <blockquote class="review-quote">“Beautiful apartment and a fantastic location. Highly recommend.”</blockquote>
+        </article>
+  
+        <article class="about-card review-card">
+          <div class="review-top">
+            <span class="rating-number">4.8</span>
+            <span class="rating-stars" aria-label="4.8 out of 5 stars">
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+            </span>
+          </div>
+          <div class="rating-small">4.8 out of 5</div>
+          <blockquote class="review-quote">“Spotless, stylish, and perfectly located. We’ll be back.”</blockquote>
+        </article>
+  
+        <article class="about-card review-card">
+          <div class="review-top">
+            <span class="rating-number">5.0</span>
+            <span class="rating-stars" aria-label="5.0 out of 5 stars">
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+            </span>
+          </div>
+          <div class="rating-small">5.0 out of 5</div>
+          <blockquote class="review-quote">“Everything was seamless—from check-in to checkout.”</blockquote>
+        </article>
+  
+        <article class="about-card review-card">
+          <div class="review-top">
+            <span class="rating-number">4.7</span>
+            <span class="rating-stars" aria-label="4.7 out of 5 stars">
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" class="star"><path d="m12 17.27 6.18 3.73-1.64-7.03 5.46-4.73-7.19-.61L12 2 9.19 8.63l-7.19.61 5.46 4.73L5.82 21z"/></svg>
+            </span>
+          </div>
+          <div class="rating-small">4.7 out of 5</div>
+          <blockquote class="review-quote">“Great value and a super comfortable bed—slept like a dream.”</blockquote>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    /* ---- About Us styles (centered, Bliss palette) ---- */
+    .about-us-section{
+      background: #f4f0e0;                 /* site section bg */
+      padding: clamp(48px,6vw,96px) 20px;
+      scroll-margin-top: 120px;
+    }
+    .about-us-wrap{
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;                   /* center everything */
+    }
+  
+    /* Cover */
+    .about-cover{
+      margin: 0 auto 28px auto;
+      max-width: 1200px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.10), 0 6px 12px rgba(0,0,0,0.06);
+    }
+    .about-cover img{
+      width: 100%;
+      display: block;
+      aspect-ratio: 16/7;
+      object-fit: cover;
+    }
+  
+    .about-title{
+      font-weight: 800;
+      letter-spacing: .3px;
+      font-size: clamp(34px,6vw,56px);
+      line-height: 1.05;
+      color: var(--primary);                /* brand olive */
+      margin: 6px 0 18px;
+    }
+    .about-lead{
+      font-size: clamp(18px,2.4vw,22px);
+      line-height: 1.65;
+      color: #3f3d34;                       /* darker olive/grey */
+      max-width: 900px;
+      margin: 0 auto 32px auto;             /* center the paragraph block */
+    }
+  
+    /* Cards common */
+    .about-card{
+      background:#fff;
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+  
+    /* Stats */
+    .stats-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(280px,1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto 24px auto;             /* keep centered */
+    }
+    .stat-card{
+      min-height: 110px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      padding: 22px 24px;
+      text-align: left;
+    }
+    .stat-icon{
+      color: var(--primary);
+      background: rgba(75,75,56,0.08);      /* brand tint */
+      border-radius:12px;
+      width:52px;height:52px;
+      display:grid;place-items:center;
+      flex:0 0 52px;
+    }
+    .stat-number{
+      font-weight:800;
+      font-size: clamp(24px,4.2vw,36px);
+      color:#2d2c24;                        /* deep brand text */
+      line-height:1.1;
+    }
+    .stat-label{
+      font-size:16px;
+      color:#6b6b50;                         /* brand accent */
+      margin-top: 4px;
+    }
+  
+    /* Reviews: 4 cards */
+    .reviews-grid{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(220px,1fr));
+      gap: 24px;
+      margin-top: 6px;
+    }
+    .review-card{
+      padding: 20px 22px;
+      text-align: left;
+    }
+    .review-top{
+      display:flex; align-items:center; gap:10px; margin-bottom:6px;
+      color: var(--primary);
+    }
+    .rating-number{ font-weight:800; font-size: 26px; color:#2d2c24; }
+    .rating-stars .star{ fill: var(--primary); opacity:.95; }
+    .rating-small{ color:#6b6b50; font-size:14px; margin-bottom:10px; }
+    .review-quote{
+      font-size: 16px; line-height:1.55; color:#2f2e26;
+    }
+  
+    /* Responsive */
+    @media (max-width: 1100px){
+      .reviews-grid{ grid-template-columns: repeat(2, minmax(220px,1fr)); }
+    }
+    @media (max-width: 640px){
+      .stats-grid{ grid-template-columns: 1fr; }
+      .reviews-grid{ grid-template-columns: 1fr; }
+      .review-card, .stat-card{ text-align: center; }
+      .stat-card{ justify-content: center; }
+    }
+  </style>
+  
+  <script>
+    // Count-up animation (runs once)
+    (function(){
+      const section = document.querySelector('#about-us');
+      if (!section) return;
+      const counters = section.querySelectorAll('.count');
+      const fmt = new Intl.NumberFormat();
+  
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const setFinal = () => counters.forEach(c => c.textContent = fmt.format(+c.dataset.target));
+  
+      function animate(el){
+        const target = +el.dataset.target;
+        const dur = 1400;
+        const start = performance.now();
+        function tick(now){
+          const p = Math.min(1,(now-start)/dur);
+          const eased = 1 - Math.pow(1-p,3);
+          el.textContent = fmt.format(Math.floor(eased * target));
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+  
+      if (reduced){ setFinal(); return; }
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+          if (e.isIntersecting){ counters.forEach(animate); obs.disconnect(); }
+        });
+      }, { threshold: 0.35 });
+      io.observe(section);
+    })();
+  </script>
+  <!-- ============ /About Us ============ -->
+  
+  <!--  
+<section class="bliss-way">
+  <div class="bliss-way-inner">
+    <div class="bliss-way-heading">
+      <small>OUR WAY</small>
+      <h2>The Bliss Stays Way</h2>
+    </div>
+    <div class="bliss-way-subtext">
+      <p>The city never stops, but you should.</p>
+      <p>Bliss Stays is designed to offer you deep rest in the heart of the city, giving you a calm space to pause, reset, and recharge.</p>
+    </div>
+
+    <nav class="bliss-way-tabs">
+      <a href="#" class="tab-link active" data-tab="location">Location</a>
+      <a href="#" class="tab-link" data-tab="experience">Experience</a>
+      <a href="#" class="tab-link" data-tab="retreats">Retreats</a>
+      <a href="#" class="tab-link" data-tab="value">Value</a>
+      <a href="#" class="tab-link" data-tab="sustainability">Sustainability</a>
+    </nav>
+
+    <div class="bliss-way-main-container">
+      <div class="bliss-way-main show" id="location">
+        <div class="bliss-way-left">
+          <h3>Right in the heart of the city</h3>
+          <p>When you’re in the city, you want to be where the rhythm of life plays out in real time where the streets hum with culture, the lights dance after dark, and every corner holds something new to discover.</p>
+          <p>Bliss Stays places you in the center of this vibrant energy. Just steps from your door, you'll find world-class restaurants, iconic landmarks, eclectic markets, and the subtle moments that make a city unforgettable.</p>
+          <p>Whether you're here to explore, to work, or simply to feel the pulse of the city, we offer more than just a place to rest we offer a sanctuary. A space to pause between adventures, recharge in comfort, and experience the city on your terms.</p>
+          <a href="#" class="link-bold">Our locations</a>
+        </div>
+        <div class="bliss-way-right">
+          <img src="city.png" alt="City Nightlife" />
+        </div>
+      </div>
+
+      <div class="bliss-way-main" id="experience">
+        <div class="bliss-way-left">
+          <h3>Curated Experiences</h3>
+          <p>Each stay at Bliss Stays is crafted to become a treasured memory a narrative of discovery, comfort, and personal connection.</p>
+          <p>Whether it's a tailored walking tour through hidden city gems, a rooftop sundown moment, or a surprise local delicacy waiting in your suite, we go beyond accommodation to elevate every moment.</p>
+          <p>Our team thoughtfully designs each touchpoint to immerse you in the spirit of the city while ensuring your journey remains distinctly your own.</p>
+          <a href="#" class="link-bold">Discover more</a>
+        </div>
+        <div class="bliss-way-right">
+          <img src="experience.png" alt="Urban Adventure" />
+        </div>
+      </div>
+
+      <div class="bliss-way-main" id="retreats">
+        <div class="bliss-way-left">
+          <h3>Your Urban Retreat</h3>
+          <p>In the midst of the city’s energy, Bliss Stays offers a haven of calm. Step inside and feel the shift where time slows, noise fades, and serenity takes hold.</p>
+          <p>Designed with quietude in mind, our retreats blend soft textures, muted tones, and mindful layouts that help you reset, refocus, and reconnect with yourself.</p>
+          <p>Whether it's a quiet evening with a book, a long bath after a day out, or simply silence this is your space to retreat and recharge.</p>
+          <a href="#" class="link-bold">View our spaces</a>
+        </div>
+        <div class="bliss-way-right">
+          <img src="urban.png" alt="Urban Retreat" />
+        </div>
+      </div>
+
+      <div class="bliss-way-main" id="value">
+        <div class="bliss-way-left">
+          <h3>Luxury with Value</h3>
+          <p>We believe luxury shouldn’t come with compromise. At Bliss Stays, premium design and personal comfort are delivered at a price that respects your budget.</p>
+          <p>Expect polished finishes, high-touch amenities, and an elevated experience without hidden fees or inflated rates.</p>
+          <p>From thoughtful interiors to smart booking perks, we redefine value by ensuring every pound you spend delivers a return in satisfaction and delight.</p>
+          <a href="#" class="link-bold">See our offers</a>
+        </div>
+        <div class="bliss-way-right">
+          <img src="luxury.png" alt="Great Value" />
+        </div>
+      </div>
+
+      <div class="bliss-way-main" id="sustainability">
+        <div class="bliss-way-left">
+          <h3>Stay Consciously</h3>
+          <p>We’re committed to creating a stay that feels good for you and the planet. Sustainability isn’t an afterthought at Bliss Stays, it’s at the core of what we do.</p>
+          <p>From locally sourced materials and energy-efficient systems to reducing waste and championing community causes, we believe every small step adds up to meaningful impact.</p>
+          <p>When you choose Bliss Stays, you choose mindful luxury where your comfort meets conscious care.</p>
+          <a href="#" class="link-bold">Learn how we care</a>
+        </div>
+        <div class="bliss-way-right">
+          <img src="sustain.png" alt="Sustainable Stay" />
+        </div>
+      </div>
+      <!-- CONTENT PANELS (Same as your original) -->
+      <!-- Paste the five .bliss-way-main sections here exactly as you have above -->
+    </div>
+  </div>
+</section> 
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f0e6;
+  width: 100%;
+  min-height: 100%;
+}
+
+.bliss-way {
+  width: 100%;
+  background-color: #f4f0e0;
+  padding: 80px 20px;
+  box-sizing: border-box;
+  color: #222;
+}
+
+  .bliss-way-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .bliss-way-heading small {
+    display: block;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+  }
+
+  .bliss-way-heading h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
+  .bliss-way-subtext p {
+    margin: 5px 0;
+    color: #333;
+  }
+
+  .bliss-way-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #ccc;
+    flex-wrap: wrap;
+  }
+
+  .bliss-way-tabs a {
+    position: relative;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+  }
+
+  .bliss-way-tabs a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #000;
+  }
+
+  .bliss-way-main-container {
+    margin-top: 40px;
+  }
+
+  .bliss-way-main {
+    display: none;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  }
+
+  .bliss-way-main.show {
+    display: flex;
+    animation: fadeSlide 0.5s ease forwards;
+  }
+
+  @keyframes fadeSlide {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .bliss-way-left {
+    flex: 1 1 400px;
+    text-align: left;
+  }
+
+  .bliss-way-left h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .bliss-way-left p {
+    margin-bottom: 10px;
+  }
+
+  .bliss-way-left a.link-bold {
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .bliss-way-right {
+    flex: 1 1 400px;
+  }
+
+  .bliss-way-right img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .bliss-way-main {
+      flex-direction: column;
+      text-align: center;
+    }
+    .bliss-way-left, .bliss-way-right {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-link');
+  const sections = document.querySelectorAll('.bliss-way-main');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', e => {
+      e.preventDefault();
+      tabs.forEach(t => t.classList.remove('active'));
+      sections.forEach(sec => sec.classList.remove('show'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('show');
+    });
+  });
+</script>
+  
+  
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      
+      <!-- LEFT SIDE: All links grouped -->
+      <div class="footer-links-group">
+        <div class="footer-column">
+          <h4>BLISS STAYS</h4>
+          <ul>
+            <li><a href="property.html">Properties</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            
+            
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h4>ENQUIRIES</h4>
+          <ul>
+            <li><a href="booknow.html">Corporate Bookings</a></li>
+            <li><a href="booknow.html">Group Bookings</a></li>
+            <li><a href="booknow.html">Apart-hotels</a></li>
+          </ul> 
+        </div>
+      </div>
+  
+      <!-- RIGHT SIDE: Logo and socials -->
+      <div class="footer-logo-section">
+        <img src="logo.png" alt="Bliss Stays Logo" class="footer-logo" />
+        <div class="social-icons">
+          <a href="#"><img src="icons/insta.png" alt="Instagram" /></a>
+          <a href="#"><img src="icons/fb.png" alt="Facebook" /></a>
+        </div>
+      </div>
+  
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; Bliss Stays Ltd. 2025. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <style>
+  .footer {
+  background-color: #f4f0e0;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 60px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.footer-links-group {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  min-width: 180px;
+}
+
+.footer-column h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #999;
+  padding-bottom: 6px;
+  color: #333;
+}
+
+.footer-column .footer-sub {
+  margin-top: 20px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin: 10px 0;
+}
+
+.footer-column a {
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #666;
+}
+
+.footer-logo-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.footer-logo {
+  width: 270px;
+  margin-bottom: 20px;
+}
+
+.footer-logo-section .social-icons a {
+  margin-left: 12px;
+}
+
+.footer-logo-section .social-icons img {
+  width: 22px;
+  filter: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 13px;
+  color: #555;
+  border-top: 1px solid #999;
+  padding-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links-group {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-logo-section {
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 30px;
+  }
+
+  .footer-logo {
+    width: 120px;
+  }
+}
+
+  </style> 
+
+</body>
+</html>
